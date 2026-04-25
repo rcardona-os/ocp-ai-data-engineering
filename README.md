@@ -61,7 +61,15 @@ Before the data can be processed, it must establish the real-time ingestion laye
 ![](media/kafka-cluster-operator.png)
 
 2. **Provision the Kafka Cluster**
-   Define a Kafka custom resource to manage brokers, topics, and users sas native OpenShift resources.
+   Define a Kafka custom resource to manage brokers, topics, and users sas native OpenShift resources. 
+   
+   2.1 **Create Project**
+
+![](media/create-kafka-project.png)
+
+   
+   Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines (create it if it doesn't exist yet).
+
 3. **Create Initial Topics**
    Successfully create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
 4. **Configure CDC**
