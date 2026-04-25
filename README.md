@@ -65,7 +65,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
    
    2.1 **Create Project**
 
-![](media/create-kafka-project.png)
+![](media/create-kafka-cluster-project.png)
 
    
    Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines (create it if it doesn't exist yet).
