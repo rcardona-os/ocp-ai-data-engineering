@@ -32,7 +32,7 @@ DRAW
 
 - Compute Plan
   
-  | Component | Estimated Resource Draw | Source / Reference |
+| Component | Estimated Resource Draw | Source / Reference |
 | :--- | :--- | :--- |
 | **RHOAI Operators** | ~2 vCPU / 8GB RAM (Idle) | Platform Overhead |
 | **Kafka (AMQ Streams)** | ~2 vCPU / 8GB RAM (3 Brokers) | Persistent storage required |
