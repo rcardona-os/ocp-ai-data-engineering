@@ -57,6 +57,9 @@ Before the data can be processed, you must establish the real-time ingestion lay
 
 1. **Deploy the Operator**
    Install the Red Hat AMQ Streams operator (the enterprise-supported distribution of Strimzi).
+
+![](media/kafka-operator.png)
+
 2. **Provision the Kafka Cluster**
    Define a Kafka custom resource to manage brokers, topics, and users as native OpenShift resources.
 3. **Create Initial Topics**
