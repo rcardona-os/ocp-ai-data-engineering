@@ -77,6 +77,9 @@ Before the data can be processed, it must establish the real-time ingestion laye
    **Kafka Instance Configuration**
 
    1. **Click Create Instance** on the Kafka tile (the first one in your screenshot).
+
+   ![](media/create-kafka-instance.png)
+
    2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
    3. **Use the following baseline configuration**, which aligns with the "Red Hat Way" for a reliable ingestion layer:
 
