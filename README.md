@@ -17,8 +17,8 @@ DRAW
   - Red Hat OpenShift AI
   - Red Hat OpenShift Serverless
   - Red Hat OpenShift Service Mesh
-  -
-  ![Installed Operator](media/installed-operators.png)
+ 
+  ![Installed Operators](media/installed-operators.png)
 
 ## Collaborate with your team
 
