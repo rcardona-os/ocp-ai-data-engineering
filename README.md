@@ -65,6 +65,8 @@ Before the data can be processed, it must establish the real-time ingestion laye
    
    2.1 **Create Project**
 
+   Project Name: osf-data-pipelines
+
 ![](media/create-kafka-cluster-project.png)
 
    
