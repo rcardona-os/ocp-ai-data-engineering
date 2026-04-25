@@ -31,6 +31,15 @@ DRAW
   - Storage: 100GB Root EBS volume per node.
 
 - Compute Plane
+
+  - Nodes: 3 x Worker Nodes
+  
+  - Instance Type: m6i.xlarge (8 vCPU / 32GB RAM).
+
+  - Storage: 100GB Root EBS volume per node.
+
+
+- Application Subsystems
   
 | Component | Estimated Resource Draw | Source / Reference |
 | :--- | :--- | :--- |
