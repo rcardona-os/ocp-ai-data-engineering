@@ -49,13 +49,24 @@ DRAW
 | **Spark Executors** | 4 Instances (~2 vCPU / 8GB RAM each) | Spec: `spark.executor.instances: 4` |
 | **Jupyter Workbenches** | ~1 vCPU / 2GB RAM per active user | Standard user allocation |
 
-## Collaborate with your team
+## Phase 1
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+## Real-Time Ingestion Layer Setup
+
+Before the data can be processed, you must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
+
+1. **Deploy the Operator**
+   Install the Red Hat AMQ Streams operator (the enterprise-supported distribution of Strimzi).
+2. **Provision the Kafka Cluster**
+   Define a Kafka custom resource to manage brokers, topics, and users as native OpenShift resources.
+3. **Create Initial Topics**
+   Successfully create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
+4. **Configure CDC**
+   Deploy a Kafka Connect instance (e.g., Debezium) to ingest Change Data Capture events from external databases directly into your Kafka topics.
+
+
+
+===
 
 ## Test and Deploy
 
