@@ -26,7 +26,7 @@ DRAW
 
   - Nodes: 3 x Master Nodes (Standard for HA).
 
-  - Instance Type: m5.xlarge (4 vCPU / 16GB RAM).
+  - Instance Type: m6i.xlarge (4 vCPU / 16GB RAM).
 
   - Storage: 100GB Root EBS volume per node.
 
