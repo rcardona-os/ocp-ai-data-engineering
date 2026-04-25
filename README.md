@@ -53,7 +53,7 @@ DRAW
 
 ## Real-Time Ingestion Layer Setup
 
-Before the data can be processed, you must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
+Before the data can be processed, it must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
 
 1. **Deploy the Operator**
    Install the **Streams for Apache Kafka** (top left) which is the Cluster Operator. It is the foundation for managing the Kafka brokers, topics, and users.
@@ -61,7 +61,7 @@ Before the data can be processed, you must establish the real-time ingestion lay
 ![](media/kafka-operator.png)
 
 2. **Provision the Kafka Cluster**
-   Define a Kafka custom resource to manage brokers, topics, and users as native OpenShift resources.
+   Define a Kafka custom resource to manage brokers, topics, and users sas native OpenShift resources.
 3. **Create Initial Topics**
    Successfully create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
 4. **Configure CDC**
