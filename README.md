@@ -56,7 +56,7 @@ DRAW
 Before the data can be processed, you must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
 
 1. **Deploy the Operator**
-   Install the Red Hat AMQ Streams operator (the enterprise-supported distribution of Strimzi).
+   Install the **Streams for Apache Kafka** (top left) which is the Cluster Operator. It is the foundation for managing the Kafka brokers, topics, and users.
 
 ![](media/kafka-operator.png)
 
