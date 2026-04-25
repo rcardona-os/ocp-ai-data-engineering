@@ -70,7 +70,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
 ![](media/create-kafka-cluster-project.png)
 
    
-   Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines (create it if it doesn't exist yet).
+   Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines.
 
 3. **Create Initial Topics**
    Successfully create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
