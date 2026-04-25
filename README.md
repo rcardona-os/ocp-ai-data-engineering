@@ -5,7 +5,6 @@ This is workshop to deploy a data engineering in Openshift AI
 ## Scope
 
 * [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
 
 ## Architecture
 
