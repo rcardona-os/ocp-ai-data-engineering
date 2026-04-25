@@ -15,8 +15,9 @@ DRAW
 
 * Openshift Cluster Platform 4.21.8
 * Openshift Operators
-  - Openshift AI
-  - 
+  - Red Hat OpenShift AI
+  - Red Hat OpenShift Serverless
+  - Red Hat OpenShift Service Mesh
 
 ## Collaborate with your team
 
