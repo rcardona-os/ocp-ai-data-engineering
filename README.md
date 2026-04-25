@@ -30,7 +30,7 @@ DRAW
 
   - Storage: 100GB Root EBS volume per node.
 
-- Compute Plan
+- Compute Plane
   
 | Component | Estimated Resource Draw | Source / Reference |
 | :--- | :--- | :--- |
