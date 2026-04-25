@@ -81,6 +81,9 @@ Before the data can be processed, it must establish the real-time ingestion laye
    ![](media/create-kafka-instance.png)
 
    2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
+
+   ![](media/create-kafka-instance.png)
+
    3. **Use the following baseline configuration**, which aligns with the "Red Hat Way" for a reliable ingestion layer:
 
 4. **Configure CDC**
