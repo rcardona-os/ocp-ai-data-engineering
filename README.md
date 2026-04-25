@@ -58,7 +58,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
 1. **Deploy the Operator**
    Install the **Streams for Apache Kafka** (top left) which is the Cluster Operator. It is the foundation for managing the Kafka brokers, topics, and users.
 
-![](media/kafka-operator.png)
+![](media/kafka-operato.png)
 
 2. **Provision the Kafka Cluster**
    Define a Kafka custom resource to manage brokers, topics, and users sas native OpenShift resources.
