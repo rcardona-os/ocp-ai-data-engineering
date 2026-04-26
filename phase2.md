@@ -106,13 +106,16 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
 #### 4. Create the Data Connection
 
+#### 💥 Crucial Step: 
+  Data Connections are strictly namespace-scoped resources. Because a Data Connection is essentially a Kubernetes Secret with specific metadata labels, it is bound by the standard security isolation of the cluster.
+
 - Configure Data Connection in the Red Hat OpenShift AI DataScience Project
 
-  1. Scroll down to the **Data connections** section and click **Add data connection**.
+  1. Navigate to the DataScience Project via the OpenShift AI GUI, and select project **osf-data-pipelines**.
 
+  2. Scroll down to the **Data connections** section and click **Add data connection**.
 
-
-  2. Fill in the following fields:
+  3. Fill in the following fields:
 
      * **Name:** `s3-data-lake`
      * **Access key:** *(The IAM Access Key you generated)*
@@ -121,9 +124,6 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      * **Region:** `eu-west-1` *(used in this setup)*
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
-  3. Click **Add**.
-
-
-
+  4. Click **Add**.
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
