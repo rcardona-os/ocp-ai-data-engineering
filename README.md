@@ -18,7 +18,7 @@ DRAW
   - Red Hat OpenShift Serverless
   - Red Hat OpenShift Service Mesh
  
-  ![Installed Operators](media/installed-operator.png)
+  ![Installed Operators](media/installed-operators.png)
 
 ## Used Infrastructure 
 
