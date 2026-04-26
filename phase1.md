@@ -48,9 +48,11 @@ Before the data can be processed, it must establish the real-time ingestion laye
        class: gp3-csi
        deleteClaim: false
    ```
+
    ![](media/create-kafka-nodepool.png)
 
    2. **Click Create Instance** on the Kafka tile.
+
    ```yaml
    apiVersion: kafka.strimzi.io/v1beta2
    kind: Kafka
@@ -82,6 +84,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
        topicOperator: {}
        userOperator: {}
    ```
+
    ![](media/create-kafka-cluster.png)
 
    - Expected:
@@ -126,6 +129,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
        retention.ms: 7200000
        segment.bytes: 1073741824
    ```
+
    - Expected:
 
    ![](media/kafka-topics.png)
@@ -156,6 +160,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
      # In a production scenario, you would add 'build' config here 
      # to include Debezium plugins
    ```
+   
    - Expected:
 
    ![](media/kafka-connect.png)
