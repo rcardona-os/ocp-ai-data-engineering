@@ -49,14 +49,14 @@ DRAW
 | **Spark Executors** | 4 Instances (~2 vCPU / 8GB RAM each) | Spec: `spark.executor.instances: 4` |
 | **Jupyter Workbenches** | ~1 vCPU / 2GB RAM per active user | Standard user allocation |
 
-## Building Block
+## Building Blocks
 
-### [Phase 1: Real Time Ingestion Layer Setup](phase1.md)
+#### [Phase 1: Real Time Ingestion Layer Setup](phase1.md)
 
-### [Phase 2: Platform & Storage Initialization](phase2.md)
+#### [Phase 2: Platform & Storage Initialization](phase2.md)
 
-### [Phase 3: Processing & Distributed Workloads](phase3.md)
+#### [Phase 3: Processing & Distributed Workloads](phase3.md)
 
-### [Phase 4: Orchestration & Automation](phase4.md)
+#### [Phase 4: Orchestration & Automation](phase4.md)
 
-### [Phase 5: Unified Observability](phase5.md)
+#### [Phase 5: Unified Observability](phase5.md)
