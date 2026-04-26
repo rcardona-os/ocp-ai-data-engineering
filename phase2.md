@@ -16,7 +16,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 #### 2. Initialize the AI Platform
 
-NOTE: Even if the selected project is **osf-data-pipelines** when the DataScience Cluster is created, the resource will apply its settings cluster-wide. It doesn't "belong" to a specific project; it tells the Red Hat OpenShift AI Operator which components to turn on across the whole cluster.
+💡 NOTE: Even if the selected project is **osf-data-pipelines**, when the DataScience Cluster is created, the resource will apply its settings cluster-wide. It doesn't "belong" to a specific project; it tells the Red Hat OpenShift AI Operator which components to turn on across the whole cluster.
 
 The Operator then takes care of the "home addresses" for each component automatically:
 
@@ -32,7 +32,7 @@ The Operator then takes care of the "home addresses" for each component automati
 
    2. It can keep the default name (usually `default-dsc`).
 
-#### Crucial Step:
+#### 💥 Crucial Step:
    In the configuration (Form or YAML), ensure the following components are set to **Managed**:
 
    * **dashboard:** (This puts the link in your grid).
