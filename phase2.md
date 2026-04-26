@@ -6,34 +6,6 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 ## Steps to get Phase 2 rolling:
 
-1. **Enabling Kserve - OpenShift Service Mesh 3**
-
-- Step 1: Deploy the Istio CNI (Container Network Interface)
-   In Mesh 3, the **CNI** must be installed first because it handles network interception.
-
-  1.  Go to the top-left **Project** dropdown and click **Create Project**.
-  2.  Name it exactly `istio-cni` and click **Create**.
-  3.  Go to **Operators** -> **Installed Operators** and click the **Red Hat OpenShift Service Mesh** operator.
-  4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
-  5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
-
-- Expected:
-  ![Istio CNI](media/istio-cni.png)
-
-- Step 2: Deploy the Istio Control Plane
-  Now that the CNI is ready, you can deploy the actual routing engine.
-
-  1.  Go back to the **Project** dropdown and click **Create Project**.
-  2.  Name it exactly `istio-system` and click **Create**.
-  3.  Go to **Operators** -> **Installed Operators** and click the **Service Mesh Operator**.
-  4.  This time, go to the **Istio** tab and click **Create Istio**. 
-      > **Note:** Notice how it is called *Istio* now, replacing the old `ServiceMeshControlPlane` resource!
-  5.  Ensure the namespace at the top says `istio-system`, accept the default YAML/form, and click **Create**.
-
-- Expected:
-  ![Istio Control Plane](media/istio-control-plane.png)
----
-
 1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
 
    `Navigate to Ecosystem > Installed Operators`
