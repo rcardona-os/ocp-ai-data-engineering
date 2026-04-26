@@ -11,20 +11,28 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`.
 2. Select the **Pipelines** tab.
 3. Click **Configure pipeline server**.
+
+   ![](media/pl0.png)
+
 4. **Object Storage Connection:**
    * Select **Existing data connection**.
-   * Choose the connection created in Phase 2. 
+   * Choose the connection created in Phase 2.
+
+   ![](media/pl1.png)
    
    > **Note:** The server will use these credentials to create a "pipeline-artifacts" folder in your bucket.
 
 5. **Database Configuration:**
    * Select **Default database on cluster**.
+
+   ![](media/pl2.png)
    
    > **Technical Note:** This will automatically deploy a small MariaDB pod in your namespace to store pipeline run history and metadata.
    
 
 6. Click **Configure pipeline server** and wait for the "Pipeline server is ready" status.
 
+    ![](media/pl3.png)
 
 #### 2. Verify Pipeline Infrastructure Pods
 
@@ -33,6 +41,8 @@ Once the server is created, OpenShift will spin up the orchestration backend. Ru
   ```bash
   oc get pods -n osf-data-pipelines | grep pipeline
   ```
+
+  ![](media/pl4.png)
 
 #### 3. Configure the Elyra Runtime (The Workbench Handshake)
 
