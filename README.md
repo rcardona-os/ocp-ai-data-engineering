@@ -76,13 +76,34 @@ Before the data can be processed, it must establish the real-time ingestion laye
 
    **Kafka Instance Configuration**
 
+   ![](media/create-kafka-instance.png)
+
+   1. **Create Kafka Node Pool** (Current namespace only)
+
+   ```yaml
+   kind: KafkaNodePool
+   apiVersion: kafka.strimzi.io/v1beta2
+   metadata:
+     name: dual-role-pool
+     namespace: osf-data-pipelines
+     labels:
+       strimzi.io/cluster: osf-kafka-cluster
+   spec:
+     replicas: 3
+     roles:
+       - controller
+       - broker
+     storage:
+       type: persistent-claim
+       size: 100Gi
+       class: gp3-csi
+       deleteClaim: false
+   ```
+   ![](media/create-kafka-nodepool.png)
+
    1. **Click Create Instance** on the Kafka tile (the first one in your screenshot).
 
-   ![](media/create-kafka-instance.png)
-
    2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
-
-   ![](media/create-kafka-instance.png)
 
    3. **Use the following baseline configuration**, which aligns with the "Red Hat Way" for a reliable ingestion layer:
 
