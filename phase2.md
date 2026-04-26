@@ -96,9 +96,12 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
 #### 4. Create the Data Connection
 
-- Configure Data Connection
+- Configure Data Connection in the Red Hat OpenShift AI DataScience Project
 
   1. Scroll down to the **Data connections** section and click **Add data connection**.
+
+
+
   2. Fill in the following fields:
 
      * **Name:** `s3-data-lake`
@@ -109,6 +112,8 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
   3. Click **Add**.
+
+
 
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
