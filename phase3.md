@@ -2,91 +2,42 @@
 
 ## Phase 3: Processing & Distributed Workloads
 
-At this stage the focus shifts from the messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
+The objective of this phase is to provision a StatefulSet-backed Workbench within a dedicated OpenShift namespace and verify the secure injection of S3 credentials via the Data Connection mechanism. This ensures the environment is primed for S3-based ETL operations and distributed compute orchestration.
 
-## Steps to get Phase 2 rolling:
+## Steps to get Phase 3 rolling:
 
-1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
+#### 1. Workbench Provisioning
 
-   `Navigate to Ecosystem > Installed Operators`
+1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`.
+2. Select the **Workbenches** tab and click **Create workbench**.
+3. **Image Selection:** Select the *Standard Data Science* or *PyTorch* notebook image.
+   
+   > **Note:** These images include pre-baked CLI tools like `boto3`, `oc`, and `pip`.
 
-   Check if Red Hat OpenShift AI is installed.
+4. **Deployment Configuration:** * **Container Size:** Select a resource profile (e.g., *Small: 1 CPU, 2Gi RAM*).
+5. **Persistent Storage:** Define a Persistent Volume Claim (PVC) size (minimum **20Gi** recommended for local caching).
+6. **Data Connection Association:** * Under the **Data connections** section, select **Use existing data connection**.
+   * Choose the connection created in Phase 2.
+   
+   > **Technical Note:** This triggers the Injection Logic, where the Operator maps the Secret's Data keys to the Pod’s environment variables.
 
-   ![Installed Operators](media/installed-operators.png)
+#### 2. Verification of Environment Variable Injection
 
-2. Initialize the AI Platform
+Once the workbench status transitions to **Running**, perform a technical audit of the container environment:
 
-    1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
+1. Click **Open** to launch the JupyterLab IDE.
+2. Open a **New Terminal** (`File` -> `New` -> `Terminal`).
+3. Execute the following command to check for the injected S3 metadata:
+```bash
+env | grep AWS
+```
 
-    ![creating-dsc.png](media/creating-dsc-cluster.png)
+Success Criteria: The terminal must return the following variables, populated with the values from your S3 Secret:
 
-    2. It can keep the default name (usually `default-dsc`).
+  - AWS_ACCESS_KEY_ID
 
-#### Crucial Step:
-   In the configuration (Form or YAML), ensure the following components are set to **Managed**:
+  - AWS_SECRET_ACCESS_KEY
 
-   * **dashboard:** (This puts the link in your grid).
-   * **datasciencepipelines:** (Required for your automated ETL orchestration).
-   * **workbenches:** (For your Jupyter/Elyra environments).
-   * **distributed workloads (CodeFlare & Ray):** (Essential for your Spark processing).
+  - AWS_S3_ENDPOINT
 
-  Example yaml definition
-  ```yaml
-  kind: DataScienceCluster
-  apiVersion: datasciencecluster.opendatahub.io/v1
-  metadata:
-    name: default-dsc
-    labels:
-      app.kubernetes.io/name: datasciencecluster
-      app.kubernetes.io/instance: default-dsc
-      app.kubernetes.io/part-of: rhods-operator
-      app.kubernetes.io/managed-by: kustomize
-      app.kubernetes.io/created-by: rhods-operator
-  spec:
-    components:
-      codeflare:
-        managementState: Managed
-      dashboard:
-        managementState: Managed
-      datasciencepipelines:
-        managementState: Managed
-      feastoperator:
-        managementState: Removed
-      kserve:
-        managementState: Managed
-        serving:
-          ingressGateway:
-            certificate:
-              type: OpenshiftDefaultIngress
-          managementState: Managed
-          name: knative-serving
-      llamastackoperator:
-        managementState: Removed
-      kueue:
-        managementState: Managed
-      modelmeshserving:
-        managementState: Managed
-      modelregistry:
-        managementState: Managed
-        registriesNamespace: rhoai-model-registries
-      ray:
-        managementState: Managed
-      workbenches:
-        managementState: Managed
-      trainingoperator:
-        managementState: Managed
-      trustyai:
-        managementState: Managed
-  ```
-
--Expected (after ~5 min):
-
-![Expeceted](media/running-dsc.png)
-
-3. Prepare your S3 Credentials
-
-
-
-
-
-#### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
+  - AWS_S3_BUCKET
