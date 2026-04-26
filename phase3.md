@@ -70,15 +70,15 @@ Success Criteria: The terminal must return the following variables, populated wi
 
 #### 3. Functional Handshake Test (S3 Reachability)
 
-    ```python
-    import os, boto3
+   ```python
+   import os, boto3
 
-    # Initialize the S3 client using injected environment variables
-    s3 = boto3.client('s3', endpoint_url=os.environ['AWS_S3_ENDPOINT'])
+   # Initialize the S3 client using injected environment variables
+   s3 = boto3.client('s3', endpoint_url=os.environ['AWS_S3_ENDPOINT'])
 
-    # List buckets to verify connectivity
-    print([bucket['Name'] for bucket in s3.list_buckets()])
-    ```
+   # List buckets to verify connectivity
+   print([bucket['Name'] for bucket in s3.list_buckets()])
+   ```
 
 #### 4. Technical Summary of Infrastructure State
 
