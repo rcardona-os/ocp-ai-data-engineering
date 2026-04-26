@@ -113,8 +113,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
        strimzi.io/kraft: enabled
    spec:
      kafka:
-       version: 4.1.0  # Keep this as is
-       # metadataVersion line removed entirely
+       version: 4.1.0
        listeners:
          - name: plain
            port: 9092
@@ -205,8 +204,12 @@ Before the data can be processed, it must establish the real-time ingestion laye
        config.storage.replication.factor: 3
        offset.storage.replication.factor: 3
        status.storage.replication.factor: 3
-     # In a production scenario, you would add 'build' config here to include Debezium plugins
+     # In a production scenario, you would add 'build' config here 
+     # to include Debezium plugins
    ```
+   - Expected:
+
+   ![](media/kafka-connect.png)
 
 
 
