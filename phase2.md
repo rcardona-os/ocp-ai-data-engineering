@@ -2,7 +2,7 @@
 
 ## Phase 2: Platform & Storage Initialization
 
-At this stage the focus shifts from messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
+At this stage the focus shifts from the messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
 
 Steps to get Phase 2 rolling:
 
