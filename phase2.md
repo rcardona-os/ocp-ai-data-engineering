@@ -104,10 +104,9 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      * **Name:** `s3-data-lake`
      * **Access key:** *(The IAM Access Key you generated)*
      * **Secret key:** *(The IAM Secret Key you generated)*
-     * **Endpoint:** Your AWS S3 endpoint URL 
-         * *Example: `https://s3.amazonaws.com` or your specific regional endpoint like `https://s3.eu-west-1.amazonaws.com`*
-     * **Region:** *(e.g., eu-west-1)*
-     * **Bucket:** `s3-data-lake-xyz789` *(or the exact name you used)*
+     * **Endpoint:** `https://s3.eu-west-1.amazonaws.com`* *(used in this setup)*
+     * **Region:** `eu-west-1` *(used in this setup)*
+     * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
   3. Click **Add**.
 
