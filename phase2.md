@@ -79,7 +79,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
         managementState: Managed
   ```
 
--Expected (after ~5 min):
+- Expected (after ~5 min):
 
 ![Expeceted](media/running-dsc.png)
 
