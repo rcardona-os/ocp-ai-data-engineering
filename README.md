@@ -134,7 +134,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
        topicOperator: {}
        userOperator: {}
    ```
-
+   ![](media/create-kafka-cluster.png)
 
    2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
 
