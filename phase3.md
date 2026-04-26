@@ -66,3 +66,24 @@ Success Criteria: The terminal must return the following variables, populated wi
   - AWS_S3_ENDPOINT
 
   - AWS_S3_BUCKET
+
+
+#### 3. Functional Handshake Test (S3 Reachability)
+
+    ```python
+    import os, boto3
+
+    # Initialize the S3 client using injected environment variables
+    s3 = boto3.client('s3', endpoint_url=os.environ['AWS_S3_ENDPOINT'])
+
+    # List buckets to verify connectivity
+    print([bucket['Name'] for bucket in s3.list_buckets()])
+    ```
+
+#### 4. Technical Summary of Infrastructure State
+
+At the conclusion of Phase 3, the following infrastructure components are synchronized:
+
+  - Pod Definition: The Workbench pod is running with a volumeMount pointing to the service account token and environment variables sourced from a secretRef.
+
+  - Security Context: The Workbench is running under a specific Service Account capable of requesting the Ray/Spark resources in the upcoming Phase 5.
