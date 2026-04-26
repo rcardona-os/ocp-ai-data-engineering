@@ -117,7 +117,7 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
   ![](media/ds-project-1.png)
 
-  2. Scroll down to the **Connections** section and click **Add data connection**.
+  2. Scroll down to the **Connections** section and click **Create connection**.
 
   3. Fill in the following fields:
 
@@ -135,5 +135,9 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      ![](media/dataconnection-1.png)
 
      ![](media/dataconnection-2.png)
+
+   - Expected
+
+     ![](media/dataconnection-3.png)
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
