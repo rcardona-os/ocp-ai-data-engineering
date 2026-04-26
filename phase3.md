@@ -94,3 +94,5 @@ At the conclusion of Phase 3, the following infrastructure components are synchr
   - Pod Definition: The Workbench pod is running with a volumeMount pointing to the service account token and environment variables sourced from a secretRef.
 
   - Security Context: The Workbench is running under a specific Service Account capable of requesting the Ray/Spark resources in the upcoming Phase 5.
+
+#### [NEXT => Phase 4: Pipeline Orchestration & Automation](phase4.md)
