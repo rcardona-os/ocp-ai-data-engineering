@@ -23,12 +23,12 @@ Steps to get Phase 2 rolling:
     2. It can keep the default name (usually `default-dsc`).
 
 #### Crucial Step:
-    In the configuration (Form or YAML), ensure the following components are set to **Managed**:
+   In the configuration (Form or YAML), ensure the following components are set to **Managed**:
 
-    * **dashboard:** (This puts the link in your grid).
-    * **datasciencepipelines:** (Required for your automated ETL orchestration).
-    * **workbenches:** (For your Jupyter/Elyra environments).
-    * **distributed workloads (CodeFlare & Ray):** (Essential for your Spark processing).
+   * **dashboard:** (This puts the link in your grid).
+   * **datasciencepipelines:** (Required for your automated ETL orchestration).
+   * **workbenches:** (For your Jupyter/Elyra environments).
+   * **distributed workloads (CodeFlare & Ray):** (Essential for your Spark processing).
 
   Example yaml definition
   ```yaml
