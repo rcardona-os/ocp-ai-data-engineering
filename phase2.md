@@ -8,7 +8,7 @@ Steps to get Phase 2 rolling:
 
 1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
 
-  `Navigate to Ecosystem > Installed Operators.`
+  `Navigate to Ecosystem > Installed Operators`
 
 Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
 
