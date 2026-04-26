@@ -178,7 +178,9 @@ Before the data can be processed, it must establish the real-time ingestion laye
        retention.ms: 7200000
        segment.bytes: 1073741824
    ```
+   - Expected:
 
+   ![](media/kafka-topics.png)
 
 4. **Configure CDC**
    Deploy a Kafka Connect instance (e.g., Debezium) to ingest Change Data Capture events from external databases directly into your Kafka topics.
