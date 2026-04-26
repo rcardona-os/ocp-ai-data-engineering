@@ -93,3 +93,6 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 - Secret Access Key
 
 - Bucket Name (e.g., osf-pipeline-artifacts)
+
+
+#### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
