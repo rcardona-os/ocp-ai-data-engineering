@@ -8,8 +8,8 @@ Steps to get Phase 2 rolling:
 
 1. `Enabling Kserve - OpenShift Service Mesh 3`
 
-### Step 1: Deploy the Istio CNI (Container Network Interface)
-In Mesh 3, the **CNI** must be installed first because it handles network interception.
+  ### Step 1: Deploy the Istio CNI (Container Network Interface)
+  In Mesh 3, the **CNI** must be installed first because it handles network interception.
 
   1.  Go to the top-left **Project** dropdown and click **Create Project**.
   2.  Name it exactly `istio-cni` and click **Create**.
@@ -17,8 +17,8 @@ In Mesh 3, the **CNI** must be installed first because it handles network interc
   4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
   5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
 
-### Step 2: Deploy the Istio Control Plane
-Now that the CNI is ready, you can deploy the actual routing engine.
+  ### Step 2: Deploy the Istio Control Plane
+  Now that the CNI is ready, you can deploy the actual routing engine.
 
   1.  Go back to the **Project** dropdown and click **Create Project**.
   2.  Name it exactly `istio-system` and click **Create**.
