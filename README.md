@@ -141,9 +141,44 @@ Before the data can be processed, it must establish the real-time ingestion laye
    ![](media/running-kafka-instance.png)
 
 
-   2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
+   3. **Create topics** (Current namespace only)
 
-   3. **Use the following baseline configuration**, which aligns with the "Red Hat Way" for a reliable ingestion layer:
+   - topic: raw-data
+
+   ```yaml
+   kind: KafkaTopic
+   apiVersion: kafka.strimzi.io/v1beta2
+   metadata:
+     name: raw-data
+     labels:
+       strimzi.io/cluster: osf-kafka-cluster
+     namespace: osf-data-pipelines
+   spec:
+     partitions: 3
+     replicas: 3
+     config:
+       retention.ms: 7200000
+       segment.bytes: 1073741824
+   ```
+
+   - topic: etl
+
+   ```yaml
+   kind: KafkaTopic
+   apiVersion: kafka.strimzi.io/v1beta2
+   metadata:
+     name: etl-input
+     labels:
+       strimzi.io/cluster: osf-kafka-cluster
+     namespace: osf-data-pipelines
+   spec:
+     partitions: 3
+     replicas: 3
+     config:
+       retention.ms: 7200000
+       segment.bytes: 1073741824
+   ```
+
 
 4. **Configure CDC**
    Deploy a Kafka Connect instance (e.g., Debezium) to ingest Change Data Capture events from external databases directly into your Kafka topics.
