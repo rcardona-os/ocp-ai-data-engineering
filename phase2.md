@@ -31,14 +31,58 @@ Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dr
 In the configuration (Form or YAML), ensure the following components are set to **Managed**:
 
 * **dashboard:** (This puts the link in your grid).
-* **pipelines:** (Required for your automated ETL orchestration).
+* **datasciencepipelines:** (Required for your automated ETL orchestration).
 * **workbenches:** (For your Jupyter/Elyra environments).
-* **distributedworkloads:** (Essential for your Spark processing).
+* **distributed workloads (CodeFlare & Ray):** (Essential for your Spark processing).
 
-Example yaml definition
-```yaml
-
-```
+  Example yaml definition
+  ```yaml
+  kind: DataScienceCluster
+  apiVersion: datasciencecluster.opendatahub.io/v1
+  metadata:
+    name: default-dsc
+    labels:
+      app.kubernetes.io/name: datasciencecluster
+      app.kubernetes.io/instance: default-dsc
+      app.kubernetes.io/part-of: rhods-operator
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/created-by: rhods-operator
+  spec:
+    components:
+      codeflare:
+        managementState: Managed
+      dashboard:
+        managementState: Managed
+      datasciencepipelines:
+        managementState: Managed
+      feastoperator:
+        managementState: Removed
+      kserve:
+        managementState: Managed
+        serving:
+          ingressGateway:
+            certificate:
+              type: OpenshiftDefaultIngress
+          managementState: Managed
+          name: knative-serving
+      llamastackoperator:
+        managementState: Removed
+      kueue:
+        managementState: Managed
+      modelmeshserving:
+        managementState: Managed
+      modelregistry:
+        managementState: Managed
+        registriesNamespace: rhoai-model-registries
+      ray:
+        managementState: Managed
+      workbenches:
+        managementState: Managed
+      trainingoperator:
+        managementState: Managed
+      trustyai:
+        managementState: Managed
+  ```
 
 -Expeceted:
 
