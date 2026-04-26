@@ -185,6 +185,29 @@ Before the data can be processed, it must establish the real-time ingestion laye
 4. **Configure CDC**
    Deploy a Kafka Connect instance (e.g., Debezium) to ingest Change Data Capture events from external databases directly into your Kafka topics.
 
+   ```yaml
+   kind: KafkaConnect
+   apiVersion: kafka.strimzi.io/v1beta2
+   metadata:
+     name: osf-connect-cluster
+     namespace: osf-data-pipelines
+     annotations:
+       strimzi.io/use-connector-resources: "true" # Enables managing connectors via YAML
+   spec:
+     version: 4.1.0
+     replicas: 1
+     bootstrapServers: osf-kafka-cluster-kafka-bootstrap:9092
+     config:
+       group.id: connect-cluster
+       offset.storage.topic: connect-cluster-offsets
+       config.storage.topic: connect-cluster-configs
+       status.storage.topic: connect-cluster-status
+       config.storage.replication.factor: 3
+       offset.storage.replication.factor: 3
+       status.storage.replication.factor: 3
+     # In a production scenario, you would add 'build' config here to include Debezium plugins
+   ```
+
 
 
 ===
