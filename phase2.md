@@ -21,7 +21,7 @@ Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dr
 
 1.  Look for the **Data Science Cluster** tab, and click **Create Instance**.
 
-![creating-dsc.png](media/installed-operators.png)
+![creating-dsc.png](media/creating-dsc.png)
 
 2.  You can keep the default name (usually `default-dsc`).
 
