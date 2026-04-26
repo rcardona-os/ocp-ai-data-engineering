@@ -16,11 +16,11 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 #### 2. Initialize the AI Platform
 
-    1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
+   1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
 
-    ![creating-dsc.png](media/creating-dsc-cluster.png)
+   ![creating-dsc.png](media/creating-dsc-cluster.png)
 
-    2. It can keep the default name (usually `default-dsc`).
+   2. It can keep the default name (usually `default-dsc`).
 
 #### Crucial Step:
    In the configuration (Form or YAML), ensure the following components are set to **Managed**:
