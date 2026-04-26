@@ -6,7 +6,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 ## Steps to get Phase 2 rolling:
 
-1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
+#### 1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
 
    `Navigate to Ecosystem > Installed Operators`
 
@@ -14,7 +14,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
    ![Installed Operators](media/installed-operators.png)
 
-2. Initialize the AI Platform
+#### 2. Initialize the AI Platform
 
     1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
 
@@ -83,7 +83,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 ![Expeceted](media/running-dsc.png)
 
-3. Prepare your S3 Credentials
+#### 3. Prepare your S3 Credentials
 As outlined in your project requirements, Data Science Pipelines require an S3-compatible object store to save run logs and artifacts. You will need:
 
   - S3 Endpoint URL (e.g., AWS S3 or MinIO)
@@ -94,9 +94,9 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
   - Bucket Name (e.g., s3-data-lake-qwsd87 / Europe - Ireland - eu-west-1 ) 
 
-4. Create the Data Connection
+#### 4. Create the Data Connection
 
-### Configure Data Connection
+- Configure Data Connection
 
   1. Scroll down to the **Data connections** section and click **Add data connection**.
   2. Fill in the following fields:
