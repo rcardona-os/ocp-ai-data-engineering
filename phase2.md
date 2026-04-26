@@ -113,17 +113,26 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
   1. Navigate to the DataScience Project via the OpenShift AI GUI, and select project **osf-data-pipelines**.
 
-  2. Scroll down to the **Data connections** section and click **Add data connection**.
+  ![](media/ds-project-0.png)
+
+  ![](media/ds-project-1.png)
+
+  2. Scroll down to the **Connections** section and click **Add data connection**.
 
   3. Fill in the following fields:
 
      * **Name:** `s3-data-lake`
      * **Access key:** *(The IAM Access Key you generated)*
      * **Secret key:** *(The IAM Secret Key you generated)*
-     * **Endpoint:** `https://s3.eu-west-1.amazonaws.com`* *(used in this setup)*
+     * **Endpoint:** `https://s3.eu-west-1.amazonaws.com` *(used in this setup)*
      * **Region:** `eu-west-1` *(used in this setup)*
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
+     ![](media/dataconnection-0.png)
 
-  4. Click **Add**.
+  4. Click **Create**.
+
+     ![](media/dataconnection-1.png)
+
+     ![](media/dataconnection-2.png)
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
