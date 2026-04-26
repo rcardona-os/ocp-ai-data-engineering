@@ -16,6 +16,16 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 #### 2. Initialize the AI Platform
 
+NOTE: Even if the selected project is osf-data-pipelines when the DataScience Cluster is created, the resource will apply its settings cluster-wide. It doesn't "belong" to a specific project; it tells the Red Hat OpenShift AI Operator which components to turn on across the whole cluster.
+
+The Operator then takes care of the "home addresses" for each component automatically:
+
+   - The Dashboard and KServe go into redhat-ods-applications.
+
+   - Monitoring goes into redhat-ods-monitoring.
+
+   - Notebook Images are managed in rhods-notebooks.
+
    1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
 
    ![creating-dsc.png](media/creating-dsc-cluster.png)
