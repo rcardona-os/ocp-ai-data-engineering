@@ -128,7 +128,7 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      * **Region:** `eu-west-1` *(used in this setup)*
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
-  4. Click **Create**.
+  4. Click **Create Connection**.
 
      ![](media/dataconnection1.png)
 
