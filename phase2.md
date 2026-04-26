@@ -16,11 +16,11 @@ Steps to get Phase 2 rolling:
 
 2. Initialize the AI Platform
 
-  1.  Look for the **Data Science Cluster** tab, and click **Create DataScienceCluster**.
+    1. Look for the **Data Science Cluster** tab, and click **Create DataScienceCluster**.
 
   ![creating-dsc.png](media/creating-dsc-cluster.png)
 
-  2.  It can keep the default name (usually `default-dsc`).
+    2. It can keep the default name (usually `default-dsc`).
 
 ---
 
