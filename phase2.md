@@ -17,7 +17,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
   4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
   5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
 
-  - Expected:
+- Expected:
   ![Istio CNI](media/istio-cni.png)
 
 - Step 2: Deploy the Istio Control Plane
@@ -30,7 +30,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
       > **Note:** Notice how it is called *Istio* now, replacing the old `ServiceMeshControlPlane` resource!
   5.  Ensure the namespace at the top says `istio-system`, accept the default YAML/form, and click **Create**.
 
-  - Expected:
+- Expected:
   ![Istio Control Plane](media/istio-control-plane.png)
 ---
 
