@@ -41,11 +41,20 @@ The objective of this phase is to provision a StatefulSet-backed Workbench withi
 Once the workbench status transitions to **Running**, perform a technical audit of the container environment:
 
 1. Click **Open** to launch the JupyterLab IDE.
+
+   ![](media/wb6.png)
+  
 2. Open a **New Terminal** (`File` -> `New` -> `Terminal`).
+
+    ![](media/wb7.png)
+
 3. Execute the following command to check for the injected S3 metadata:
+
 ```bash
 env | grep AWS
 ```
+
+    ![](media/wb8.png)
 
 Success Criteria: The terminal must return the following variables, populated with the values from your S3 Secret:
 
