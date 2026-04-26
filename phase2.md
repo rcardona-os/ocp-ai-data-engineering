@@ -6,12 +6,9 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 Steps to get Phase 2 rolling:
 
-1. Verify the RHOAI Operator
-Before we can create pipelines, we need the platform itself.
+1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
 
-Go to the OpenShift Web Console.
-
-Navigate to Operators > Installed Operators.
+  `Navigate to Ecosystem > Installed Operators.`
 
 Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
 
