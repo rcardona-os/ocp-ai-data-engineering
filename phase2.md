@@ -10,7 +10,7 @@ Steps to get Phase 2 rolling:
 
    `Navigate to Ecosystem > Installed Operators`
 
- Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
+  Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
 
 ![Installed Operators](media/installed-operators.png)
 
@@ -20,7 +20,7 @@ Steps to get Phase 2 rolling:
 
   ![creating-dsc.png](media/creating-dsc-cluster.png)
 
-  2.  You can keep the default name (usually `default-dsc`).
+  2.  It can keep the default name (usually `default-dsc`).
 
 ---
 
