@@ -19,13 +19,11 @@ The objective of this phase is to provision a StatefulSet-backed Workbench withi
    
    > **Note:** These images include pre-baked CLI tools like `boto3`, `oc`, and `pip`.
 
-4. **Deployment Configuration:** * **Container Size:** Select a resource profile (e.g., *Medium: 1 CPU, 8Gi RAM*).
+4. **Deployment Configuration:** * **Container Size:** Select a resource profile (e.g., *Medium: 1 CPU, 8Gi RAM*). **Persistent Storage:** Define a Persistent Volume Claim (PVC) size (minimum **20Gi** recommended for local caching).
 
 ![](media/wb2.png)
 
-5. **Persistent Storage:** Define a Persistent Volume Claim (PVC) size (minimum **20Gi** recommended for local caching).
-
-6. **Data Connection Association:** * Under the **Data connections** section, select **Use existing data connection**.
+5. **Data Connection Association:** * Under the **Data connections** section, select **Use existing data connection**.
 
 ![](media/wb4.png)
 
