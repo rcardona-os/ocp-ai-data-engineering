@@ -12,7 +12,7 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
    Check if Red Hat OpenShift AI is installed.
 
-   ![Installed Operators](media/installed-operators.png)
+   ![Installed Operators](media/installed-operator.png)
 
 2. Initialize the AI Platform
 
