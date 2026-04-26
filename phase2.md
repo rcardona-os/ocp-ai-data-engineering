@@ -4,11 +4,11 @@
 
 At this stage the focus shifts from the messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
 
-Steps to get Phase 2 rolling:
+## Steps to get Phase 2 rolling:
 
 1. `Enabling Kserve - OpenShift Service Mesh 3`
 
-   ### Step 1: Deploy the Istio CNI (Container Network Interface)
+   - Step 1: Deploy the Istio CNI (Container Network Interface)
    In Mesh 3, the **CNI** must be installed first because it handles network interception.
 
    1.  Go to the top-left **Project** dropdown and click **Create Project**.
@@ -17,7 +17,7 @@ Steps to get Phase 2 rolling:
    4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
    5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
 
-  ### Step 2: Deploy the Istio Control Plane
+  - Step 2: Deploy the Istio Control Plane
   Now that the CNI is ready, you can deploy the actual routing engine.
 
   1.  Go back to the **Project** dropdown and click **Create Project**.
