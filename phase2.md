@@ -121,23 +121,23 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
   3. Fill in the following fields:
 
-     * **Name:** `s3-data-lake`
+     * **Name:** `s3-data-lake-qwsd87`
      * **Access key:** *(The IAM Access Key you generated)*
      * **Secret key:** *(The IAM Secret Key you generated)*
      * **Endpoint:** `https://s3.eu-west-1.amazonaws.com` *(used in this setup)*
      * **Region:** `eu-west-1` *(used in this setup)*
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
-    ![](media/dataconnection-0.png)
+    ![](media/dataconnection0.png)
 
   4. Click **Create**.
 
-     ![](media/dataconnection-1.png)
+     ![](media/dataconnection1.png)
 
-     ![](media/dataconnection-2.png)
+     ![](media/dataconnection2.png)
 
    - Expected
 
-     ![](media/dataconnection-3.png)
+     ![](media/dataconnection3.png)
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
