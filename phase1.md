@@ -2,7 +2,7 @@
 
 ## Phase 1: Real Time Ingestion Layer Setup
 
-Before the data can be processed, it must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
+Before the data can be processed, it must establish the real-time ingestion layer using **Apache Kafka**.
 
 1. **Deploy the Operator**
    Install the **Streams for Apache Kafka** (top left) which is the Cluster Operator. It is the foundation for managing the Kafka brokers, topics, and users.

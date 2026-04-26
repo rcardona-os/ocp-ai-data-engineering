@@ -4,7 +4,7 @@
 
 The objective of this phase is to provision a Data Science Pipeline Server within the project namespace and configure the Elyra Runtime in your Workbench. This allows you to convert Jupyter notebooks into nodes in a visual directed acyclic graph (DAG) and execute them as automated cluster jobs.
 
-## Steps to get Phase 3 rolling:
+## Steps to get Phase 4 rolling:
 
 #### 1. Provision the Pipeline Server
 
