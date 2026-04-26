@@ -11,11 +11,11 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
   - Step 1: Deploy the Istio CNI (Container Network Interface)
    In Mesh 3, the **CNI** must be installed first because it handles network interception.
 
-   1.  Go to the top-left **Project** dropdown and click **Create Project**.
-   2.  Name it exactly `istio-cni` and click **Create**.
-   3.  Go to **Operators** -> **Installed Operators** and click the **Red Hat OpenShift Service Mesh** operator.
-   4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
-   5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
+     1.  Go to the top-left **Project** dropdown and click **Create Project**.
+     2.  Name it exactly `istio-cni` and click **Create**.
+     3.  Go to **Operators** -> **Installed Operators** and click the **Red Hat OpenShift Service Mesh** operator.
+     4.  Go to the **IstioCNI** tab (not *Istio*) and click **Create IstioCNI**.
+     5.  Ensure the name is `default` and the namespace is `istio-cni`, then click **Create**.
 
   - Step 2: Deploy the Istio Control Plane
   Now that the CNI is ready, you can deploy the actual routing engine.
