@@ -2,20 +2,55 @@
 
 ## Phase 2: Platform & Storage Initialization
 
-Before the data can be processed, it must establish the real-time ingestion layer using **Red Hat AMQ Streams**.
+At this stage the focus shifts from messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
 
-1. **Deploy the Operator**
-   Install the **Streams for Apache Kafka** (top left) which is the Cluster Operator. It is the foundation for managing the Kafka brokers, topics, and users.
+Steps to get Phase 2 rolling:
 
-![](media/kafka-cluster-operator.png)
+1. Verify the RHOAI Operator
+Before we can create pipelines, we need the platform itself.
 
-2. **Provision the Kafka Cluster**
-   Define a Kafka custom resource to manage brokers, topics, and users as native OpenShift resources. 
-   
-   2.1 **Create Project**
+Go to the OpenShift Web Console.
 
-   Project Name: osf-data-pipelines
+Navigate to Operators > Installed Operators.
 
-![](media/create-kafka-cluster-project.png)
+Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
 
-   Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines.
+![Installed Operators](media/installed-operators.png)
+
+2. Initialize the AI Platform
+
+1.  Look for the **Data Science Cluster** tab, and click **Create Instance**.
+
+![creating-dsc.png](media/installed-operators.png)
+
+2.  You can keep the default name (usually `default-dsc`).
+
+---
+
+#### Crucial Step:
+In the configuration (Form or YAML), ensure the following components are set to **Managed**:
+
+* **dashboard:** (This puts the link in your grid).
+* **pipelines:** (Required for your automated ETL orchestration).
+* **workbenches:** (For your Jupyter/Elyra environments).
+* **distributedworkloads:** (Essential for your Spark processing).
+
+Example yaml definition
+```yaml
+
+```
+
+-Expeceted:
+
+![Expeceted](media/installed-operators.png)
+
+3. Prepare your S3 Credentials
+As outlined in your project requirements, Data Science Pipelines require an S3-compatible object store to save run logs and artifacts. You will need:
+
+- S3 Endpoint URL (e.g., AWS S3 or MinIO)
+
+- Access Key ID
+
+- Secret Access Key
+
+- Bucket Name (e.g., osf-pipeline-artifacts)
