@@ -134,8 +134,12 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
      ![](media/dataconnection2.png)
 
+     ![](media/dataconnection3.png)
+
    - Expected
 
-     ![](media/dataconnection3.png)
+     ![](media/dataconnection4.png)
+
+     
 
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
