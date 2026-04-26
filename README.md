@@ -101,7 +101,40 @@ Before the data can be processed, it must establish the real-time ingestion laye
    ```
    ![](media/create-kafka-nodepool.png)
 
-   1. **Click Create Instance** on the Kafka tile (the first one in your screenshot).
+   2. **Click Create Instance** on the Kafka tile.
+   ```yaml
+   apiVersion: kafka.strimzi.io/v1beta2
+   kind: Kafka
+   metadata:
+     name: osf-kafka-cluster
+     namespace: osf-data-pipelines
+     annotations:
+       strimzi.io/node-pools: enabled
+       strimzi.io/kraft: enabled
+   spec:
+     kafka:
+       version: 4.1.0  # Keep this as is
+       # metadataVersion line removed entirely
+       listeners:
+         - name: plain
+           port: 9092
+           type: internal
+           tls: false
+         - name: tls
+           port: 9093
+           type: internal
+           tls: true
+       config:
+         offsets.topic.replication.factor: 3
+         transaction.state.log.replication.factor: 3
+         transaction.state.log.min.isr: 2
+         default.replication.factor: 3
+         min.insync.replicas: 2
+     entityOperator:
+       topicOperator: {}
+       userOperator: {}
+   ```
+
 
    2. **Select the YAML view** to ensure the configuration matches your requirements for persistence and listeners.
 
