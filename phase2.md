@@ -6,9 +6,9 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
 
 ## Steps to get Phase 2 rolling:
 
-1. `Enabling Kserve - OpenShift Service Mesh 3`
+1. **Enabling Kserve - OpenShift Service Mesh 3**
 
-   - Step 1: Deploy the Istio CNI (Container Network Interface)
+  - Step 1: Deploy the Istio CNI (Container Network Interface)
    In Mesh 3, the **CNI** must be installed first because it handles network interception.
 
    1.  Go to the top-left **Project** dropdown and click **Create Project**.
