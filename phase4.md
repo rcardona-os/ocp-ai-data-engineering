@@ -38,19 +38,27 @@ Once the server is created, OpenShift will spin up the orchestration backend. Ru
 
 Now, your Workbench needs to know where to send its code.
 
-
-1. Open your **Workbench** (JupyterLab).
-2. On the left sidebar, click the **Runtimes** icon (looks like a small computer monitor).
-3. Click the **+** (plus icon) to create a new **Kubeflow Pipelines** runtime.
-4. **Display Name:** `Local-Project-Pipeline`
-5. **Data Science Pipeline API Endpoint:** Click the "Generate" button or enter the internal URL: `https://ds-pipeline-ui-osf-data-pipelines.apps.[your-cluster-url]`.
-6. **Cloud Object Storage:** Enter your S3 bucket name and endpoint. Use the Kubernetes Secret option to point to your existing `aws-connection-my-storage` secret.
+  1. Open your **Workbench** (JupyterLab).
+  2. On the left sidebar, click the **Runtimes** icon (looks like a small computer monitor).
+  3. Click the **+** (plus icon) to create a new **Kubeflow Pipelines** runtime.
+  4. **Display Name:** `Local-Project-Pipeline`
+  5. **Data Science Pipeline API Endpoint:** Click the "Generate" button or enter the internal URL: `https://ds-pipeline-ui-osf-data-pipelines.apps.[your-cluster-url]`.
+  6. **Cloud Object Storage:** Enter your S3 bucket name and endpoint. Use the Kubernetes Secret option to point to your existing `aws-connection-my-storage` secret.
 
 #### 4. Functional Handshake Test (The "Hello World" Pipeline)
 
-1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
-2. Drag a single `.ipynb` notebook onto the canvas.
-3. Click the **Play** button (Run) in the top toolbar.
-4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
+  1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
+  2. Drag a single `.ipynb` notebook onto the canvas.
+  3. Click the **Play** button (Run) in the top toolbar.
+  4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
 
   > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
+
+#### 5. Technical Summary of State
+
+At the end of Phase 4:
+
+* **Orchestration:** Your namespace is now a mini-Kubeflow environment with its own private database and API server.
+* **Separation of Concerns:** You can now schedule jobs to run at 2 AM without having your Workbench open or running.
+
+> **Question:** Does your Pipeline Server show as "Ready" in the dashboard, or did it get stuck while deploying the MariaDB pod?
