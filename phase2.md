@@ -12,13 +12,13 @@ Steps to get Phase 2 rolling:
 
    Check if Red Hat OpenShift AI is installed. (Make sure you switch the project dropdown back to All namespaces to see cluster-wide operators).
 
-![Installed Operators](media/installed-operators.png)
+   ![Installed Operators](media/installed-operators.png)
 
 2. Initialize the AI Platform
 
     1. Look for the **Data Science Cluster** tab, and click **Create DataScienceCluster**.
 
-  ![creating-dsc.png](media/creating-dsc-cluster.png)
+    ![creating-dsc.png](media/creating-dsc-cluster.png)
 
     2. It can keep the default name (usually `default-dsc`).
 
