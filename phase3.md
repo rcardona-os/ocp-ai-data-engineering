@@ -72,13 +72,20 @@ Success Criteria: The terminal must return the following variables, populated wi
 
    ```python
    import os, boto3
-
-   # Initialize the S3 client using injected environment variables
+   # Initialize client
    s3 = boto3.client('s3', endpoint_url=os.environ['AWS_S3_ENDPOINT'])
 
-   # List buckets to verify connectivity
-   print([bucket['Name'] for bucket in s3.list_buckets()])
+   # List buckets - accessing the ['Buckets'] key is required
+   response = s3.list_buckets()
+   bucket_names = [bucket['Name'] for bucket in response['Buckets']]
+   print(f"Connection Successful! Found buckets: {bucket_names}")
    ```
+
+   ![](media/wb9.png)
+
+   - Expected:
+
+   ![](media/wb10.png)
 
 #### 4. Technical Summary of Infrastructure State
 
