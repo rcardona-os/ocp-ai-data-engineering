@@ -131,3 +131,6 @@ At the end of phase 4:
 * **Separation of Concerns:** You can now schedule jobs to run at 2 AM without having your Workbench open or running.
 
     > **Question:** Does your Pipeline Server show as "Ready" in the dashboard, or did it get stuck while deploying the MariaDB pod?
+
+
+#### [NEXT => Phase 5: Unified Observability](phase5.md)
