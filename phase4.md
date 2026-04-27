@@ -97,7 +97,7 @@ Now, the Workbench needs to know where to send its code.
 
       - Endpoint: https://s3.eu-west-1.amazonaws.com
 
-      - Bucket Name: The actual name of your AWS S3 bucket (e.g., whatever oc extract secret/s3-data-lake-qwsd87 -n osf-data-pipelines --keys=AWS_S3_BUCKET --to=- outputs).
+      - Bucket Name (e.i. s3-data-lake-qwsd87)
 
       - Authentication Type: USER_CREDENTIALS
 
