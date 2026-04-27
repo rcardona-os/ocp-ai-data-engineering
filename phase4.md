@@ -125,7 +125,7 @@ Now, the Workbench needs to know where to send its code.
 
 #### 5. Technical Summary of State
 
-At the end of Phase 4:
+At the end of phase 4:
 
 * **Orchestration:** Your namespace is now a mini-Kubeflow environment with its own private database and API server.
 * **Separation of Concerns:** You can now schedule jobs to run at 2 AM without having your Workbench open or running.
