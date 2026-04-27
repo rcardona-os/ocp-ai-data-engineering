@@ -6,6 +6,8 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 ## Steps to get Phase 4 rolling:
 
+---
+
 #### 1. Provision the Pipeline Server
 
 - 1.1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`
@@ -35,6 +37,8 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
     ![](media/pl3.png)
 
+---
+
 #### 2. Verify Pipeline Infrastructure Pods
 
 - 2.1 - Once the server is created, OpenShift will spin up the orchestration backend. Run this in your terminal to verify
@@ -52,6 +56,8 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
   oc policy add-role-to-user edit -z jupyter-notebook -n osf-data-pipelines
   oc policy add-role-to-user edit -z wb-datapipeline -n osf-data-pipelines
   ```
+
+---
 
 #### 3. Configure the Elyra Runtime (The Workbench Handshake)
 
@@ -103,6 +109,8 @@ Now, the Workbench needs to know where to send its code.
 
     - Click Save & Close.
 
+---
+
 #### 4. Functional Handshake Test (The "Hello World" Pipeline)
 
   - 4.1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
@@ -114,6 +122,8 @@ Now, the Workbench needs to know where to send its code.
   - 4.4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
 
     > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
+
+---
 
 #### 5. Technical Summary of State
 
