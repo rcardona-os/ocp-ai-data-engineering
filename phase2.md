@@ -4,7 +4,7 @@
 
 At this stage the focus shifts from the messaging layer to the "brain" of the operation: **Red Hat OpenShift AI (RHOAI)**. Next step is to set up the environment where the Data Scientists will build their Elyra DAGs and where the Argo engine will execute them.
 
-## Steps to get Phase 2 rolling:
+## Steps to get phase 2 rolling
 
 #### 1. Verify the RHOAI Operator. Go to the OpenShift Web Console.
 
@@ -13,6 +13,8 @@ At this stage the focus shifts from the messaging layer to the "brain" of the op
    Check if Red Hat OpenShift AI is installed.
 
    ![Installed Operators](media/installed-operators.png)
+
+---
 
 #### 2. Initialize the AI Platform
 
@@ -26,11 +28,11 @@ The Operator then takes care of the "home addresses" for each component automati
 
    - Notebook Images are managed in rhods-notebooks.
 
-   1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
+- 2.1. Click on the **Red Hat OpenShift AI** operator tile, and look for the **Data Science Cluster** tab, and click on **Create DataScienceCluster**.
 
    ![creating-dsc.png](media/creating-dsc-cluster.png)
 
-   2. It can keep the default name (usually `default-dsc`).
+- 2.2. It can keep the default name (usually `default-dsc`).
 
 #### 💥 Crucial Step:
    In the configuration (Form or YAML), ensure the following components are set to **Managed**:
@@ -93,6 +95,8 @@ The Operator then takes care of the "home addresses" for each component automati
 
 ![Expeceted](media/running-dsc.png)
 
+---
+
 #### 3. Prepare your S3 Credentials
 As outlined in your project requirements, Data Science Pipelines require an S3-compatible object store to save run logs and artifacts. You will need:
 
@@ -102,7 +106,9 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
   - Secret Access Key
 
-  - Bucket Name (e.g., s3-data-lake-qwsd87 / Europe - Ireland - eu-west-1 ) 
+  - Bucket Name (e.g., s3-data-lake-qwsd87 / Europe - Ireland - eu-west-1 )
+
+---
 
 #### 4. Create the Data Connection
 
@@ -111,15 +117,15 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
 
 - Configure Data Connection in the Red Hat OpenShift AI DataScience Project
 
-  1. Navigate to the DataScience Project via the OpenShift AI GUI, and select project **osf-data-pipelines**.
+- 4.1. Navigate to the DataScience Project via the OpenShift AI GUI, and select project **osf-data-pipelines**.
 
   ![](media/ds-project-0.png)
 
   ![](media/dataconnection0.png)
 
-  2. Scroll down to the **Connections** section and click **Create connection**.
+- 4.2. Scroll down to the **Connections** section and click **Create connection**.
 
-  3. Fill in the following fields:
+- 4.3. Fill in the following fields:
 
      * **Name:** `s3-data-lake-qwsd87`
      * **Access key:** *(The IAM Access Key you generated)*
@@ -128,18 +134,17 @@ As outlined in your project requirements, Data Science Pipelines require an S3-c
      * **Region:** `eu-west-1` *(used in this setup)*
      * **Bucket:** `s3-data-lake-qwsd87` *(used in this setup)*
 
-  4. Click **Create Connection**.
+- 4.4. Click **Create Connection**.
 
-     ![](media/dataconnection1.png)
+  ![](media/dataconnection1.png)
 
-     ![](media/dataconnection2.png)
+  ![](media/dataconnection2.png)
 
-     ![](media/dataconnection3.png)
+  ![](media/dataconnection3.png)
 
-   - Expected
+- Expected
 
-     ![](media/dataconnection4.png)
+  ![](media/dataconnection4.png)
 
      
-
 #### [NEXT => Phase 3: Processing & Distributed Workloads](phase3.md)
