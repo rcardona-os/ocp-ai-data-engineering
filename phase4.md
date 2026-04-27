@@ -8,13 +8,13 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 #### 1. Provision the Pipeline Server
 
-- 1.1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`.
+- 1.1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`
 
 - 1.2. Select the **Pipelines** tab.
 
 - 1.3. Click **Configure pipeline server**.
 
-   ![](media/pl0.png)
+  ![](media/pl0.png)
 
 - 1.4. **Object Storage Connection:**
    * Select **Existing data connection**.
