@@ -36,7 +36,7 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 #### 2. Verify Pipeline Infrastructure Pods
 
-Once the server is created, OpenShift will spin up the orchestration backend. Run this in your terminal to verify
+2.1 - Once the server is created, OpenShift will spin up the orchestration backend. Run this in your terminal to verify
 
   ```bash
   oc get pods -n osf-data-pipelines | grep pipeline
@@ -44,16 +44,48 @@ Once the server is created, OpenShift will spin up the orchestration backend. Ru
 
   ![](media/pl4.png)
 
+2.2 - Grant Pipeline Permissions. Open your local terminal (with oc access) and run these commands to give your Workbench the edit VIP pass
+
+  ```bash
+  oc policy add-role-to-user edit -z default -n osf-data-pipelines
+  oc policy add-role-to-user edit -z jupyter-notebook -n osf-data-pipelines
+  oc policy add-role-to-user edit -z wb-datapipeline -n osf-data-pipelines
+  ```
+
 #### 3. Configure the Elyra Runtime (The Workbench Handshake)
 
-Now, your Workbench needs to know where to send its code.
+Now, the Workbench needs to know where to send its code.
 
   1. Open your **Workbench** (JupyterLab).
-  2. On the left sidebar, click the **Runtimes** icon (looks like a small computer monitor).
-  3. Click the **+** (plus icon) to create a new **Kubeflow Pipelines** runtime.
-  4. **Display Name:** `Local-Project-Pipeline`
-  5. **Data Science Pipeline API Endpoint:** Click the "Generate" button or enter the internal URL: `https://ds-pipeline-ui-osf-data-pipelines.apps.[your-cluster-url]`.
-  6. **Cloud Object Storage:** Enter your S3 bucket name and endpoint. Use the Kubernetes Secret option to point to your existing `aws-connection-my-storage` secret.
+  2. On the left sidebar, click the **Runtimes**. Select/create a runtime image.
+  
+     2.1 - Add a Runtime Image. Elyra needs to know what containers it is allowed to use to run your code.
+
+       - In JupyterLab, open the left sidebar and click the Runtime Images icon.
+
+       - Click the + (plus) button.
+
+       - Display Name: Standard Python
+
+       - Image Name: quay.io/opendatahub/workbench-images:runtime-datascience-ubi9-python-3.11 (or any standard python image)
+
+       - Click Save & Close.
+
+  # HERE CREATE THE RUNTIME IMAGE PIC 
+   
+  3. Click the **+** (plus icon) to create a new **Pipelines** runtime (Kubeflow pipeline underneath).
+
+     **Pipeline Runtime Configuration:** Open the left sidebar and click the Runtimes icon (the monitor icon). Click the + to add a new Data Science Pipeline runtime. Data Science Pipelines Settings:
+
+       - Display Name: `Local-Project-Pipeline`
+
+       - API Endpoint: The public https://ds-pipeline-dspa... URL.
+
+       - Public API Endpoint: The exact same public https://ds-pipeline-dspa... URL.
+
+       - User Namespace: osf-data-pipelines
+
+       - Authentication Type: KUBERNETES_SERVICE_ACCOUNT_TOKEN
 
 #### 4. Functional Handshake Test (The "Hello World" Pipeline)
 
