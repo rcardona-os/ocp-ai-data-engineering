@@ -8,13 +8,13 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 #### 1. Provision the Pipeline Server
 
-1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`.
-2. Select the **Pipelines** tab.
-3. Click **Configure pipeline server**.
+  1.1. Navigate to the **OpenShift AI Dashboard** -> **Data Science Projects** -> `osf-data-pipelines`.
+  1.2. Select the **Pipelines** tab.
+  1.3. Click **Configure pipeline server**.
 
    ![](media/pl0.png)
 
-4. **Object Storage Connection:**
+  1.4. **Object Storage Connection:**
    * Select **Existing data connection**.
    * Choose the connection created in Phase 2.
 
@@ -22,7 +22,7 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
    
    > **Note:** The server will use these credentials to create a "pipeline-artifacts" folder in your bucket.
 
-5. **Database Configuration:**
+  1.5. **Database Configuration:**
    * Select **Default database on cluster**.
 
    ![](media/pl2.png)
@@ -30,7 +30,7 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
    > **Technical Note:** This will automatically deploy a small MariaDB pod in your namespace to store pipeline run history and metadata.
    
 
-6. Click **Configure pipeline server** and wait for the "Pipeline server is ready" status.
+  1.6. Click **Configure pipeline server** and wait for the "Pipeline server is ready" status.
 
     ![](media/pl3.png)
 
