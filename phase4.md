@@ -29,9 +29,8 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
    ![](media/pl2.png)
    
-   > **Technical Note:** This will automatically deploy a small MariaDB pod in your namespace to store pipeline run history and metadata.
+     > **Technical Note:** This will automatically deploy a small MariaDB pod in your namespace to store pipeline run history and metadata.
    
-
 - 1.6. Click **Configure pipeline server** and wait for the "Pipeline server is ready" status.
 
     ![](media/pl3.png)
@@ -114,7 +113,7 @@ Now, the Workbench needs to know where to send its code.
 
   - 4.4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
 
-  > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
+    > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
 
 #### 5. Technical Summary of State
 
@@ -123,4 +122,4 @@ At the end of Phase 4:
 * **Orchestration:** Your namespace is now a mini-Kubeflow environment with its own private database and API server.
 * **Separation of Concerns:** You can now schedule jobs to run at 2 AM without having your Workbench open or running.
 
-> **Question:** Does your Pipeline Server show as "Ready" in the dashboard, or did it get stuck while deploying the MariaDB pod?
+    > **Question:** Does your Pipeline Server show as "Ready" in the dashboard, or did it get stuck while deploying the MariaDB pod?
