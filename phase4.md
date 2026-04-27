@@ -58,43 +58,61 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 Now, the Workbench needs to know where to send its code.
 
-  1. Open your **Workbench** (JupyterLab).
-  2. On the left sidebar, click the **Runtimes**. Select/create a runtime image.
+- 3.1. Open your **Workbench** (JupyterLab).
   
-     2.1 - Add a Runtime Image. Elyra needs to know what containers it is allowed to use to run your code.
+- 3.2. Elyra needs to know what containers it is allowed to use to run your code, select/create a **Runtime image**.
 
-       - In JupyterLab, open the left sidebar and click the Runtime Images icon.
+  - In JupyterLab, open the left sidebar and click the Runtime Images icon.
 
-       - Click the + (plus) button.
+  - Click the + (plus) button.
 
-       - Display Name: Standard Python
+  - Display Name: Standard Python
 
-       - Image Name: quay.io/opendatahub/workbench-images:runtime-datascience-ubi9-python-3.11 (or any standard python image)
+  - Image Name: quay.io/opendatahub/workbench-images:runtime-datascience-ubi9-python-3.11 (or any standard python image)
 
-       - Click Save & Close.
+  - Click Save & Close.
 
-  # HERE CREATE THE RUNTIME IMAGE PIC 
+     # HERE CREATE THE RUNTIME IMAGE PIC 
    
-  3. Click the **+** (plus icon) to create a new **Pipelines** runtime (Kubeflow pipeline underneath).
+ - 3.3. Click the **+** (plus icon) to create a new **Pipelines** runtime (Kubeflow pipeline underneath).
 
-     **Pipeline Runtime Configuration:** Open the left sidebar and click the Runtimes icon (the monitor icon). Click the + to add a new Data Science Pipeline runtime. Data Science Pipelines Settings:
+   Open the left sidebar and click the Runtimes icon (the monitor icon). Click the + to add a new Data Science Pipeline runtime. Data Science Pipelines Settings:
 
-       - Display Name: `Local-Project-Pipeline`
+    - Data Science Pipelines Settings:
 
-       - API Endpoint: The public https://ds-pipeline-dspa... URL.
+      - Display Name: `Local-Project-Pipeline`
 
-       - Public API Endpoint: The exact same public https://ds-pipeline-dspa... URL.
+      - API Endpoint: The public https://ds-pipeline-dspa... URL.
 
-       - User Namespace: osf-data-pipelines
+      - Public API Endpoint: The exact same public https://ds-pipeline-dspa... URL.
 
-       - Authentication Type: KUBERNETES_SERVICE_ACCOUNT_TOKEN
+      - User Namespace: osf-data-pipelines
+
+      - Authentication Type: KUBERNETES_SERVICE_ACCOUNT_TOKEN
+
+    - Cloud Object Storage (S3) Settings:
+
+      - Endpoint: https://s3.eu-west-1.amazonaws.com
+
+      - Bucket Name: The actual name of your AWS S3 bucket (e.g., whatever oc extract secret/s3-data-lake-qwsd87 -n osf-data-pipelines --keys=AWS_S3_BUCKET --to=- outputs).
+
+      - Authentication Type: USER_CREDENTIALS
+
+      - Username: Paste your raw AWS_ACCESS_KEY_ID from Phase 1.
+
+      - Password: Paste your raw AWS_SECRET_ACCESS_KEY from Phase 1.
+
+    - Click Save & Close.
 
 #### 4. Functional Handshake Test (The "Hello World" Pipeline)
 
-  1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
-  2. Drag a single `.ipynb` notebook onto the canvas.
-  3. Click the **Play** button (Run) in the top toolbar.
-  4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
+  - 4.1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
+
+  - 4.2. Drag a single `.ipynb` notebook onto the canvas.
+
+  - 4.3. Click the **Play** button (Run) in the top toolbar.
+
+  - 4.4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
 
   > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
 
