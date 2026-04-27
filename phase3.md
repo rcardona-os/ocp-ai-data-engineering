@@ -4,7 +4,7 @@
 
 The objective of this phase is to provision a StatefulSet-backed Workbench within a dedicated OpenShift namespace and verify the secure injection of S3 credentials via the Data Connection mechanism. This ensures the environment is primed for S3-based ETL operations and distributed compute orchestration.
 
-## Steps to get Phase 3 rolling:
+## Steps to get phase 3 rolling:
 
 #### 1. Workbench Provisioning
 
