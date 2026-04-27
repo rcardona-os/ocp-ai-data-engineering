@@ -44,7 +44,7 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
   ![](media/pl4.png)
 
-2.2 - Grant Pipeline Permissions. Open your local terminal (with oc access) and run these commands to give your Workbench the edit VIP pass
+2.2 - 💥 **Grant Pipeline Permissions**. Open your local terminal (with oc access) and run these commands to give your Workbench the edit VIP pass
 
   ```bash
   oc policy add-role-to-user edit -z default -n osf-data-pipelines
