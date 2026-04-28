@@ -90,9 +90,81 @@ In this step the task is to write the Python code that defines what the pipeline
             print("FAILED: Secrets were not mounted.")
     ```
   
+    2. Wire the Pipeline and Inject Secrets
+    ```python
+    @dsl.pipeline(
+    name="enterprise-secure-s3-pipeline",
+    description="A production-ready pipeline using injected Kubernetes Secrets"
+    )
+    def secure_s3_pipeline():
+        # Instantiate your step(s)
+        task1 = data_extraction_step()
+        
+        # SECURITY MAGIC: Inject the OpenShift Secret directly into the pod at runtime!
+        kubernetes.use_secret_as_env(
+            task=task1,
+            secret_name='s3-data-lake-qwsd88',
+            secret_key_to_env={
+                'AWS_ACCESS_KEY_ID': 'AWS_ACCESS_KEY_ID',
+                'AWS_SECRET_ACCESS_KEY': 'AWS_SECRET_ACCESS_KEY'
+            }
+        )
+
+    # Compile the Python code into a Kubeflow YAML blueprint
+    if __name__ == '__main__':
+        compiler.Compiler().compile(
+            pipeline_func=secure_s3_pipeline,
+            package_path='secure_pipeline.yaml' 
+        )
+        print("Blueprint compiled to: secure_pipeline.yaml")
+    ```  
+
+    3. Deploy to OpenShift AI
+    ```python
+    from kfp.client import Client
+    import urllib3
+
+    # Mute the SSL warning for the lab's self-signed certificate
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+    # 1. Grab the internal security token OpenShift assigned to this Workbench
+    with open('/var/run/secrets/kubernetes.io/serviceaccount/token', 'r') as f:
+        token = f.read()
+
+    # 2. Authenticate with the Pipeline Server using the token and ignoring SSL warnings
+    client = Client(
+        host="https://ds-pipeline-dspa-osf-data-pipelines.apps.ai.sandbox3051.opentlc.com",
+        existing_token=token,
+        verify_ssl=False
+    )
+
+    # 3. Upload the blueprint to the UI
+    client.upload_pipeline(
+        pipeline_package_path='secure_pipeline.yaml',
+        pipeline_name='enterprise-secure-s3-pipeline',
+        description='Deployed via Python SDK (GitOps ready)'
+    )
+
+    print("Pipeline successfully deployed to the OpenShift AI Dashboard!")
+    ```
+
+    4. (optional)Trigger a Run Programmatically
+    ```python
+    client.create_run_from_pipeline_package(
+        pipeline_file='secure_pipeline.yaml',
+        experiment_name='Default',
+        run_name='automated-sdk-run'
+    )
+    print("Run submitted! Check the Runs tab in the OpenShift AI Dashboard.")
+    ```
+
+    - Expected:
+
+      ![](media/pipeline-as-code1.png)
+
 ---
 
-#### 5. Technical Summary of State
+#### 4. Technical Summary of State
 
 At the end of phase 4:
 
