@@ -79,7 +79,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
 
      ![](media/create-kafka-cluster.png)
 
-   - Expected:
+   - Expected (~3 min):
 
      ![](media/running-kafka-instance.png)
 
@@ -122,7 +122,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
        segment.bytes: 1073741824
    ```
 
-   - Expected:
+   - Expected (~1 min):
 
      ![](media/kafka-topics.png)
 ---
@@ -154,7 +154,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
      # to include Debezium plugins
    ```
    
-   - Expected:
+   - Expected (~2 min):
 
    ![](media/kafka-connect.png)
 
