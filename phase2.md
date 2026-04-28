@@ -85,7 +85,7 @@ The Operator then takes care of the "home addresses" for each component automati
         managementState: Managed
   ```
 
-- Expected (after ~5 min):
+- Expected (after ~3 min):
 
 ![Expeceted](media/running-dsc.png)
 
