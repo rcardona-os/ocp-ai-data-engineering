@@ -65,64 +65,31 @@ In this step the task is to write the Python code that defines what the pipeline
 
   ![](media/pipeline-as-code0.png)
   
-- 3.2. Elyra needs to know what containers it is allowed to use to run your code, select/create a **Runtime image**.
+- 3.2. Pipeline python notebook
 
-  - In JupyterLab, open the left sidebar and click the Runtime Images icon.
+    1. Define the Pipeline Components
+    ```python
+    from kfp import dsl, compiler
+    from kfp import kubernetes
 
-  - Click the + (plus) button.
-
-  - Display Name: Standard Python
-
-  - Image Name: quay.io/opendatahub/workbench-images:runtime-datascience-ubi9-python-3.11 (or any standard python image)
-
-  - Click Save & Close.
-
-     # HERE CREATE THE RUNTIME IMAGE PIC 
-   
- - 3.3. Click the **+** (plus icon) to create a new **Pipelines** runtime (Kubeflow pipeline underneath).
-
-   Open the left sidebar and click the Runtimes icon (the monitor icon). Click the + to add a new Data Science Pipeline runtime. Data Science Pipelines Settings:
-
-    - Data Science Pipelines Settings:
-
-      - Display Name: `Local-Project-Pipeline`
-
-      - API Endpoint: The public https://ds-pipeline-dspa... URL.
-
-      - Public API Endpoint: The exact same public https://ds-pipeline-dspa... URL.
-
-      - User Namespace: osf-data-pipelines
-
-      - Authentication Type: KUBERNETES_SERVICE_ACCOUNT_TOKEN
-
-    - Cloud Object Storage (S3) Settings:
-
-      - Endpoint: https://s3.eu-west-1.amazonaws.com
-
-      - Bucket Name (e.i. s3-data-lake-qwsd87)
-
-      - Authentication Type: USER_CREDENTIALS
-
-      - Username: Paste your raw AWS_ACCESS_KEY_ID from Phase 1.
-
-      - Password: Paste your raw AWS_SECRET_ACCESS_KEY from Phase 1.
-
-    - Click Save & Close.
-
----
-
-#### 4. Functional Handshake Test (The "Hello World" Pipeline)
-
-  - 4.1. In JupyterLab, create a new **Pipeline Editor** (from the Launcher).
-
-  - 4.2. Drag a single `.ipynb` notebook onto the canvas.
-
-  - 4.3. Click the **Play** button (Run) in the top toolbar.
-
-  - 4.4. Select your `Local-Project-Pipeline` runtime and hit **OK**.
-
-    > **Next Step:** Once you trigger the run, you can go back to the OpenShift AI Dashboard under the **Pipeline Runs** tab to watch your notebook execute as a standalone container job.
-
+    # Define Step 1: The container image is hardcoded for total reproducibility
+    @dsl.component(
+        base_image="quay.io/opendatahub/workbench-images:runtime-datascience-ubi9-python-3.11"
+    )
+    def data_extraction_step():
+        import os
+        
+        # The code looks for environment variables (which we will inject securely later)
+        access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+        secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        
+        if access_key and secret_key:
+            print("SUCCESS! Secure environment variables are loaded!")
+            print(f"Connecting to S3 with key starting in: {access_key[:4]}...")
+        else:
+            print("FAILED: Secrets were not mounted.")
+    ```
+  
 ---
 
 #### 5. Technical Summary of State
