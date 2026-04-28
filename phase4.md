@@ -57,11 +57,13 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
 
 ---
 
-#### 3. Configure the Elyra Runtime (The Workbench Handshake)
+#### 3. Using pipelines as code
 
-Now, the Workbench needs to know where to send its code.
+In this step the task is to write the Python code that defines what the pipeline does, what container images to use, and how to securely map the Kubernetes S3 Secret.
 
 - 3.1. Open your **Workbench** (JupyterLab).
+
+  ![](media/pipeline-as-code0.png)
   
 - 3.2. Elyra needs to know what containers it is allowed to use to run your code, select/create a **Runtime image**.
 
