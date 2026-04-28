@@ -14,7 +14,7 @@ Before the data can be processed, it must establish the real-time ingestion laye
    ![](media/create-kafka-cluster-project.png)
 
    Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines.
-
+---
 2. **Create Initial Topics**
    Following the implementation plan, it must now define a Kafka custom resource to provision the cluster brokers with persistent storage. Create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
 
@@ -128,8 +128,9 @@ Before the data can be processed, it must establish the real-time ingestion laye
    - Expected:
 
      ![](media/kafka-topics.png)
+---
 
-4. **Configure CDC**
+3. **Configure CDC**
    Deploy a Kafka Connect instance (e.g., Debezium) to ingest Change Data Capture events from external databases directly into your Kafka topics.
 
    ```yaml
