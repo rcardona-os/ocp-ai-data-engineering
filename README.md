@@ -17,6 +17,7 @@ DRAW
   - Red Hat OpenShift AI
   - Red Hat OpenShift Serverless
   - Red Hat OpenShift Service Mesh
+  - Stream for Apache Kafka
  
   ![Installed Operators](media/installed-operators.png)
 
@@ -57,6 +58,6 @@ DRAW
 
 #### [Phase 3: Processing & Distributed Workloads](phase3.md)
 
-#### [Phase 4: Orchestration & Automation](phase4.md)
+#### [Phase 4: Pipeline Orchestration & Automation](phase4.md)
 
 #### [Phase 5: Unified Observability](phase5.md)
