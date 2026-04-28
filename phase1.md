@@ -2,18 +2,15 @@
 
 ## Phase 1: Real Time Ingestion Layer Setup
 
-Before the data can be processed, it must establish the real-time ingestion layer using **Apache Kafka**.
+Before the data can be processed, it must establish the real-time ingestion layer using **Apache Kafka**. The first to provision the **Kafka Cluster** is the create an Openshift project.
 
-1. **Provision the Kafka Cluster**
-   Define a Kafka custom resource to manage brokers, topics, and users as native OpenShift resources. 
-   
-   - **Create Project**
+1. **Create Project**
 
        Project Name: osf-data-pipelines
 
        ![](media/create-kafka-cluster-project.png)
 
-       Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines.
+       💥 Before creating any instances, ensure you are in the correct project. The architectural plan specifies **osf-data-pipelines** for data-related workloads. In the top-left dropdown of your OpenShift console, switch from openshift-operators to osf-data-pipelines.
 ---
 2. **Create Initial Topics**
    Following the implementation plan, it must now define a Kafka custom resource to provision the cluster brokers with persistent storage. Create the `raw-data` and `etl-input` topics to ensure producers and consumers can operate correctly.
