@@ -32,10 +32,9 @@ The objective of this phase is to provision a StatefulSet-backed Workbench withi
    
    > **Technical Note:** This triggers the Injection Logic, where the Operator maps the Secret's Data keys to the Pod’s environment variables.
  
- - Expected:
+ - Expected (~2 min):
 
    ![](media/wb5.png)
-
 
 #### 2. Verification of Environment Variable Injection
 
