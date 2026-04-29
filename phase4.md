@@ -162,6 +162,10 @@ In this step the task is to write the Python code that defines what the pipeline
 
       ![](media/pipeline-as-code1.png)
 
+      ![](media/pipeline-as-code2.png)
+
+      ![](media/pipeline-as-code3.png)
+
 ---
 
 #### 4. Technical Summary of State
