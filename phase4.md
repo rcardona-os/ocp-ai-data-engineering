@@ -177,5 +177,4 @@ At the end of phase 4:
 
     > **Question:** Does your Pipeline Server show as "Ready" in the dashboard, or did it get stuck while deploying the MariaDB pod?
 
-
 #### [NEXT => Phase 5: Unified Observability](phase5.md)
