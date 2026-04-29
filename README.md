@@ -39,7 +39,7 @@ The core directive of this design is to abandon "click-ops" and buggy UI wrapper
 
 ## Architecture
 
-DRAW
+TO BE ADDED
 
 ## Software Requirements
 
