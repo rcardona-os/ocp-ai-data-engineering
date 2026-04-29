@@ -1,10 +1,41 @@
 # Openshift AI Data Engineering
 ## Excutive Summary
-This is workshop to deploy a data engineering in Openshift AI
+The objective of this workshop is to bridge the gap between high-speed data ingestion and heavy-duty machine learning workflows. By integrating real-time event streaming (Apache Kafka) with distributed object storage, and automated pipeline orchestration (Kubeflow), we provide data science teams with a "zero-trust," GitOps-ready environment.
+
+This architecture delivers a production-grade Data Engineering and MLOps platform natively on Red Hat OpenShift AI. It bridges the gap between high-velocity event streaming (Kafka) and heavy-duty machine learning workflows (Kubeflow).
+
+The core directive of this design is to abandon "click-ops" and buggy UI wrappers in favor of pure Pipeline-as-Code. By using the Kubeflow Python SDK, the platform ensures that all ML workflows are 100% reproducible, GitOps-ready, and highly secure—relying entirely on native Kubernetes Secret injection to eliminate plain-text credentials.
 
 ## Scope
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
+### **Phase 1: Real-Time Ingestion (Kafka)**
+* **The Goal:** Handle high-velocity data and event routing.
+* **Tech Specs:** * Deploy Apache Kafka to manage live telemetry streams.
+  * Set up the foundation for event-driven architecture (e.g., triggering a pipeline run automatically when 10,000 new records arrive or data drift is detected).
+
+### **Phase 2: Platform & Storage (S3)**
+* **The Goal:** Establish a decoupled, scalable data lake.
+* **Tech Specs:** * Provision S3-compatible object storage for raw data, processed features, and model artifacts.
+  * Integrate Cloud Object Storage credentials securely via Kubernetes Secrets.
+  * Mount data connections directly to Jupyter Workbenches for exploratory data analysis (EDA) without exposing hardcoded keys.
+
+### **Phase 3: Distributed Processing (Spark)**
+* **The Goal:** Heavy-lifting data transformation.
+* **Tech Specs:** * Integrate distributed frameworks like Apache Spark within OpenShift AI.
+  * Automate the batching of live Kafka streams into S3 (e.g., Parquet files) so downstream ML pipelines can consume the data efficiently.
+
+### **Phase 4: Pipeline Orchestration (Kubeflow Pipelines)**
+* **The Goal:** Automated, zero-trust ML model training and deployment.
+* **Tech Specs:** * Build Directed Acyclic Graphs (DAGs) using the KFP Python SDK.
+  * Dynamically inject Kubernetes environment variables into pipeline containers at runtime to securely access S3.
+  * Allocate hardware (CPUs/GPUs) on the fly per pipeline step.
+  * *Explicitly Out-of-Scope:* Visual pipeline editors (like Elyra), which introduce security vulnerabilities with local S3 credential handling.
+
+### **Phase 5: Unified Observability (Grafana)**
+* **The Goal:** Track system health and model accuracy.
+* **Tech Specs:** * Deploy Grafana dashboards to monitor cluster hardware utilization (GPUs/Memory).
+  * Track pipeline execution success rates, duration, and Kafka consumer lag.
+  * Lay the groundwork for tracking model data drift and real-time inference latency.
 
 ## Architecture
 
