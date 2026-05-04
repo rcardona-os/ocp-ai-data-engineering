@@ -46,9 +46,9 @@ TO BE ADDED
 * Openshift Cluster Platform 4.21.8
 * Openshift Operators
   - Red Hat OpenShift AI
-  - Red Hat OpenShift Serverless
+  - Red Hat OpenShift Serverless 2
   - Red Hat OpenShift Service Mesh
-  - Stream for Apache Kafka
+  - Streams for Apache Kafka
  
   ![Installed Operators](media/installed-operators.png)
 
