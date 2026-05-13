@@ -54,7 +54,11 @@ The objective of this phase is to provision a Data Science Pipeline Server withi
   oc policy add-role-to-user edit -z jupyter-notebook -n osf-data-pipelines
   oc policy add-role-to-user edit -z wb-datapipeline -n osf-data-pipelines
   ```
+- 2.3 (optional) Check the rolebining configuration
 
+  ```bash
+  oc get rolebindings -n osf-data-pipelines -o yaml | grep -A 5 -B 5 "wb-datapipeline"
+  ```
 ---
 
 #### 3. Using pipelines as code
