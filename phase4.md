@@ -69,10 +69,12 @@ In this step the task is to write the Python code that defines what the pipeline
 
   ![](media/pipeline-as-code0.png)
   
-- 3.2. Pipeline python notebook
+- 3.2. Pipeline python notebook. Open a python notebook, give an proper name, and copy and paste the following snip code individual cells, and execute them in a sequential order.
 
     1. Define the Pipeline Components
     ```python
+    # i.Define the Pipeline Components
+
     from kfp import dsl, compiler
     from kfp import kubernetes
 
@@ -96,6 +98,8 @@ In this step the task is to write the Python code that defines what the pipeline
   
     2. Wire the Pipeline and Inject Secrets
     ```python
+    # ii. Wire the Pipeline and Inject Secrets
+
     @dsl.pipeline(
     name="enterprise-secure-s3-pipeline",
     description="A production-ready pipeline using injected Kubernetes Secrets"
@@ -125,6 +129,8 @@ In this step the task is to write the Python code that defines what the pipeline
 
     3. Deploy to OpenShift AI
     ```python
+    # iii. Deploy to OpenShift AI
+
     from kfp.client import Client
     import urllib3
 
@@ -152,7 +158,7 @@ In this step the task is to write the Python code that defines what the pipeline
     print("Pipeline successfully deployed to the OpenShift AI Dashboard!")
     ```
 
-    4. (optional)Trigger a Run Programmatically
+    4. (optional) Trigger a Run Programmatically
     ```python
     client.create_run_from_pipeline_package(
         pipeline_file='secure_pipeline.yaml',
