@@ -160,6 +160,8 @@ In this step the task is to write the Python code that defines what the pipeline
 
     4. (optional) Trigger a Run Programmatically
     ```python
+    # iv. Trigger a Run Programmatically
+
     client.create_run_from_pipeline_package(
         pipeline_file='secure_pipeline.yaml',
         experiment_name='Default',
