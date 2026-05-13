@@ -69,7 +69,7 @@ In this step the task is to write the Python code that defines what the pipeline
 
   ![](media/pipeline-as-code0.png)
   
-- 3.2. Pipeline python notebook. Open a python notebook, give an proper name, and copy and paste the following snip code individual cells, and execute them in a sequential order.
+- 3.2. Pipeline python notebook. Open a Python notebook, give it a suitable name, copy and paste the following code snippets into individual cells, and execute them in order.
 
     1. Define the Pipeline Components
     ```python
